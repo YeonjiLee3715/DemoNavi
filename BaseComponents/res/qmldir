@@ -1,0 +1,10 @@
+module BaseComponents
+plugin BaseComponents
+
+BaseWindow 1.0 BaseWindow.qml
+BaseView 1.0 BaseView.qml
+BaseButton 1.0 BaseButton.qml
+BaseTextEdit 1.0 BaseTextEdit.qml
+BaseCombobox 1.0 BaseCombobox.qml
+BaseListView 1.0 BaseListView.qml
+BaseTreeView 1.0 BaseTreeView.qml
