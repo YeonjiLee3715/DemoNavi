@@ -1,8 +1,6 @@
 #ifndef QBASEVIEW_H
 #define QBASEVIEW_H
 
-//#include <cmnDef.h>
-//#include <ModuleEnum.h>
 #include <QHash>
 
 #include "QBaseEventHandler.h"

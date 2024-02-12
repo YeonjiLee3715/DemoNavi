@@ -2,7 +2,6 @@
 
 #include <QDir>
 
-#include <cmnDef.h>
 #include <CLogger.h>
 
 #include "baseComponentsDefs.h"

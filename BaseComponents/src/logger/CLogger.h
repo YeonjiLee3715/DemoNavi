@@ -22,7 +22,7 @@
 
 #include <time.h>
 
-#include <cmnDef.h>
+#include <cmnDefs.h>
 
 #if defined(__JNI_DEBUG) || defined(__DEBUG)
 #include "CStrManager.h"

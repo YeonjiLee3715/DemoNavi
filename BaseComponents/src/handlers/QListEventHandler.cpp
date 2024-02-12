@@ -2,8 +2,6 @@
 
 #include <QDir>
 
-#include <cmnDef.h>
-
 #include <CLogger.h>
 #include <assert.h>
 

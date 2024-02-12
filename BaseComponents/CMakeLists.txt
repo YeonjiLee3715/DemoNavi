@@ -9,7 +9,7 @@ set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
 set(BASECOMPONENTS_INCLUDES
-    src/defines/baseComponentsDefs.h
+    src/defs/baseComponentsDefs.h
     src/QBaseView.h
     src/handlers/QBaseEventHandler.h
     src/handlers/QWindowEventHandler.h
@@ -23,7 +23,7 @@ set(BASECOMPONENTS_INCLUDES
 include_directories(
     src
     src/handlers
-    src/defines
+    src/defs
     src/logger
 )
 
@@ -41,7 +41,7 @@ set(SOURCE_FILES
 )
 
 set(HEADERS_FILES
-    src/defines/cmnDef.h
+    src/defs/cmnDefs.h
     src/logger/CLogger.h
     ${BASECOMPONENTS_INCLUDES}
 )
@@ -50,10 +50,11 @@ qt_add_library(BaseComponents STATIC
     ${SOURCE_FILES}
     ${HEADERS_FILES}
 )
-qt_add_qml_module(BaseComponents
+
+qt6_add_qml_module(BaseComponents
     URI com.custom.basecomponents
     VERSION 1.0
-    RESOURCE_PREFIX "/qt/qml/basecomponents"
+    RESOURCE_PREFIX "/"
     QML_FILES
         res/BaseWindow.qml
         res/BaseView.qml
@@ -63,7 +64,7 @@ qt_add_qml_module(BaseComponents
         res/BaseListView.qml
         res/BaseTreeView.qml
     SOURCES
-        src/defines/baseComponentsDefs.h
+        src/defs/baseComponentsDefs.h
 )
 
 set_target_properties(BaseComponents PROPERTIES
