@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/qt,c++,cmake
-# Edit at https://www.toptal.com/developers/gitignore?templates=qt,c++,cmake
+# Created by https://www.toptal.com/developers/gitignore/api/cmake,qt,qml,c++
+# Edit at https://www.toptal.com/developers/gitignore?templates=cmake,qt,qml,c++
 
 ### C++ ###
 # Prerequisites
@@ -52,6 +52,11 @@ _deps
 # External projects
 *-prefix/
 
+### QML ###
+# Cached binary representations of QML and JS files
+*.qmlc
+*.jsc
+
 ### Qt ###
 # C++ objects and libs
 *.so.*
@@ -71,8 +76,6 @@ moc_*.cpp
 moc_*.h
 qrc_*.cpp
 ui_*.h
-*.qmlc
-*.jsc
 Makefile*
 *build-*
 *.qm
@@ -98,5 +101,5 @@ CMakeLists.txt.user*
 
 *_qmlcache.qrc
 
-# End of https://www.toptal.com/developers/gitignore/api/qt,c++,cmake
+# End of https://www.toptal.com/developers/gitignore/api/cmake,qt,qml,c++
 BaseComponents/include/
