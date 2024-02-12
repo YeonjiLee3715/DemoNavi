@@ -344,8 +344,9 @@ bool ViewControlModule::initQmlEngine()
                         }, Qt::QueuedConnection);
 
     if( m_pEngine->rootContext() != nullptr ) {
-        m_pEngine->addImportPath( QStringLiteral("qrc:/Main/res/qml") );
         m_pEngine->addImportPath( QStringLiteral("qrc:/Main/res") );
+        m_pEngine->addImportPath( QStringLiteral("qrc:/Main/res/qml") );
+        m_pEngine->addImportPath( QStringLiteral("qrc:/Main/res/img") );
         m_pEngine->addImportPath( QStringLiteral("qrc:/com/custom/basecomponents") );
     }
 

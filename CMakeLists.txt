@@ -121,6 +121,8 @@ qt6_add_qml_module(${CMAKE_PROJECT_NAME}
         "res/qml/Components/qmldir"
         "res/qml/Views/qmldir"
         "qtquickcontrols2.conf"
+        "res/img/marker.png"
+        "res/img/marker_blue.png"
 )
 
 add_subdirectory(content)
