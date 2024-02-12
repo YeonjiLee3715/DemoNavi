@@ -1,6 +1,6 @@
 #include "QBaseView.h"
 
-#include <viewDefs.h>
+#include <baseComponentsDefs.h>
 #include <QViewEventHandler.h>
 
 #include <CLogger.h>
@@ -241,9 +241,9 @@ void QBaseView::Init()
 {
     RegistControlEventHandlers();
 
-    QHash<int, QBaseEventHandler*>::iterator it = m_mapCtrHandlers.find((int)ViewEnum::OBJECT_VIEW);
+    QHash<int, QBaseEventHandler*>::iterator it = m_mapCtrHandlers.find((int)ControlEnum::OBJECT_VIEW);
     if( it == m_mapCtrHandlers.end() ){
-        m_mapCtrHandlers.insert( (int)ViewEnum::OBJECT_VIEW, reinterpret_cast<QBaseEventHandler*>(new QViewEventHandler()));
+        m_mapCtrHandlers.insert( (int)ControlEnum::OBJECT_VIEW, reinterpret_cast<QBaseEventHandler*>(new QViewEventHandler()));
     }
 
     SetControlEventConnections();

@@ -1,13 +1,13 @@
 import QtQuick
 import QtQuick.Controls
-import ViewEnum 1.0
+import com.custom.basecomponents
 
 Button {
     id: control
 
-    property int objectType: ViewEnum.OBJECT_BUTTON_CONTROL
+    property int objectType: ControlEnum.OBJECT_BUTTON_CONTROL
     property int objectId: 0
-    property int controlType: ViewEnum.CONTROL_BUTTON
+    property int controlType: ControlEnum.CONTROL_BUTTON
     property bool bConnectEvent: false
 
     property bool bConnectClickedEvent: false

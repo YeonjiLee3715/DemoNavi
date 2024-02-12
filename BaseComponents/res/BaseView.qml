@@ -1,9 +1,9 @@
-import QtQuick 2.12
+import QtQuick
 import QtQuick.Controls
-import ViewEnum 1.0
+import com.custom.basecomponents
 
 Page {
-    property int objectType: ViewEnum.OBJECT_VIEW
+    property int objectType: ControlEnum.OBJECT_VIEW
     property int objectId: 0
     property int viewType: 0
     property bool bConnectEvent: false

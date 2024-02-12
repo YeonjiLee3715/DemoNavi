@@ -5,7 +5,7 @@
 
 #include <CLogger.h>
 
-#include "viewDefs.h"
+#include "baseComponentsDefs.h"
 
 namespace nsQComboBoxEventHandler
 {
@@ -51,7 +51,7 @@ void QComboBoxEventHandler::connectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_COMBOBOX_CONTROL ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_COMBOBOX_CONTROL ) )
     {
         LOGE( TAG, "This object is not a combobox control. objectType: %d", nObjectType );
         return;
@@ -126,7 +126,7 @@ void QComboBoxEventHandler::disconnectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_COMBOBOX_CONTROL ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_COMBOBOX_CONTROL ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;

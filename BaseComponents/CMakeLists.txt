@@ -8,16 +8,28 @@ set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
 
 find_package(Qt6 6.2 COMPONENTS Quick REQUIRED)
 
+set(BASECOMPONENTS_INCLUDES
+    src/defines/baseComponentsDefs.h
+    src/QBaseView.h
+    src/handlers/QBaseEventHandler.h
+    src/handlers/QWindowEventHandler.h
+    src/handlers/QButtonEventHandler.h
+    src/handlers/QComboBoxEventHandler.h
+    src/handlers/QListEventHandler.h
+    src/handlers/QTextEditEventHandler.h
+    src/handlers/QViewEventHandler.h
+)
+
 include_directories(
-    res
-    res/qml
     src
     src/handlers
+    src/defines
+    src/logger
 )
 
 set(SOURCE_FILES
     src/QBaseView.cpp
-    src/CLogger.cpp
+    src/logger/CLogger.cpp
 # modules/viewModule/handlers
     src/handlers/QBaseEventHandler.cpp
     src/handlers/QButtonEventHandler.cpp
@@ -29,18 +41,9 @@ set(SOURCE_FILES
 )
 
 set(HEADERS_FILES
-    src/viewDefs.h
-    src/QBaseView.h
-    src/CLogger.h
-    src/cmnDef.h
-# handlers
-    src/handlers/QBaseEventHandler.h
-    src/handlers/QWindowEventHandler.h
-    src/handlers/QButtonEventHandler.h
-    src/handlers/QComboBoxEventHandler.h
-    src/handlers/QListEventHandler.h
-    src/handlers/QTextEditEventHandler.h
-    src/handlers/QViewEventHandler.h
+    src/defines/cmnDef.h
+    src/logger/CLogger.h
+    ${BASECOMPONENTS_INCLUDES}
 )
 
 qt_add_library(BaseComponents STATIC
@@ -48,11 +51,10 @@ qt_add_library(BaseComponents STATIC
     ${HEADERS_FILES}
 )
 qt_add_qml_module(BaseComponents
-    URI BaseComponents
+    URI com.custom.basecomponents
     VERSION 1.0
-    RESOURCE_PREFIX "/qt/basecomponents"
+    RESOURCE_PREFIX "/qt/qml/basecomponents"
     QML_FILES
-        res/BaseComponentsControls.qml
         res/BaseWindow.qml
         res/BaseView.qml
         res/BaseButton.qml
@@ -61,16 +63,7 @@ qt_add_qml_module(BaseComponents
         res/BaseListView.qml
         res/BaseTreeView.qml
     SOURCES
-        src/viewDefs.h
-        basecomponents.cpp
-        basecomponents.h
-)
-
-qt_add_qml_module(ViewEnum
-    URI ViewEnum
-    VERSION 1.0
-    RESOURCE_PREFIX "/qt/viewenum"
-    SOURCES src/viewDefs.h
+        src/defines/baseComponentsDefs.h
 )
 
 set_target_properties(BaseComponents PROPERTIES
@@ -81,9 +74,15 @@ set_target_properties(BaseComponents PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_compile_definitions(BaseComponents
-    PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
-target_link_libraries(BaseComponents
-    PRIVATE Qt6::Quick)
+target_compile_definitions(BaseComponents PRIVATE
+    $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
+target_link_libraries(BaseComponents PRIVATE
+    Qt6::Quick
+)
 
-target_include_directories(BaseComponents PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+file(COPY ${BASECOMPONENTS_INCLUDES} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_include_directories(BaseComponents INTERFACE
+    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+)

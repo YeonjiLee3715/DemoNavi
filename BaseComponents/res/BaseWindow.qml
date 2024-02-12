@@ -1,12 +1,10 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.5
-import QtQuick.Window 2.11
-import ViewEnum 1.0
+import QtQuick
+import com.custom.basecomponents
 
 Window{
-    property int objectType: ViewEnum.OBJECT_WINDOW
+    property int objectType: ControlEnum.OBJECT_WINDOW
     property int objectId: 0
-    property int windowType: ViewEnum.WINDOW_NONE
+    property int windowType: ControlEnum.WINDOW_NONE
     property bool bConnectEvent: false
 
     property bool bConnectShowEvent: false

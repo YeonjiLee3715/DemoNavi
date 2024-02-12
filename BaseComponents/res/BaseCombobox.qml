@@ -1,11 +1,11 @@
-import QtQuick 2.12
-import QtQuick.Controls 2.4
-import ViewEnum 1.0
+import QtQuick
+import QtQuick.Controls
+import com.custom.basecomponents
 
 ComboBox {
     id: control
 
-    property int objectType: ViewEnum.OBJECT_COMBOBOX_CONTROL
+    property int objectType: ControlEnum.OBJECT_COMBOBOX_CONTROL
     property int objectId: 0
     property bool bConnectEvent: false
 

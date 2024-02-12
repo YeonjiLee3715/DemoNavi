@@ -1,10 +1,10 @@
-import QtQuick 2.9
-import QtQuick.Layouts 1.0
-import QtQuick.Controls 2.4
-import ViewEnum 1.0
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls
+import com.custom.basecomponents
 
 Rectangle{
-    property int objectType: ViewEnum.OBJECT_TEXTEDIT_CONTROL
+    property int objectType: ControlEnum.OBJECT_TEXTEDIT_CONTROL
     property int objectId: 0
     property bool bConnectEvent: false
 

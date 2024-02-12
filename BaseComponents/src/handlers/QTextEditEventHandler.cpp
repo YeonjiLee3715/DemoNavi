@@ -5,7 +5,7 @@
 #include <cmnDef.h>
 #include <CLogger.h>
 
-#include "viewDefs.h"
+#include "baseComponentsDefs.h"
 
 namespace nsQTextEditEventHandler {
     const char* TAG = "QTextEditEventHandler";
@@ -50,7 +50,7 @@ void QTextEditEventHandler::connectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_TEXTEDIT_CONTROL ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_TEXTEDIT_CONTROL ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;
@@ -113,7 +113,7 @@ void QTextEditEventHandler::disconnectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_WINDOW ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_WINDOW ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;
@@ -184,7 +184,7 @@ void QTextEditEventHandler::HandleControlEditingFinishedEvent()
 /*
     switch( vObjectId.toInt() )
     {
-    case static_cast<int>(ViewEnum::ID_EDT_SOME_TEXT_EDIT):
+    case static_cast<int>(ControlEnum::ID_EDT_SOME_TEXT_EDIT):
         emit SigSomethingChanged(vText.toString());
         break;
     default:

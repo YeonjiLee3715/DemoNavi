@@ -1,10 +1,10 @@
-import QtQuick 2.9
-import QtQuick.Controls 2.1
-import ViewEnum 1.0
+import QtQuick
+import QtQuick.Controls
+import com.custom.basecomponents
 
 Item {
     id: control
-    property int objectType: ViewEnum.OBJECT_LIST_VIEW
+    property int objectType: ControlEnum.OBJECT_LIST_VIEW
     property int objectId: 0
     property bool bConnectEvent: false
 

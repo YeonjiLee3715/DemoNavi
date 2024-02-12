@@ -5,7 +5,7 @@
 
 #include <CLogger.h>
 
-#include "viewDefs.h"
+#include "baseComponentsDefs.h"
 
 namespace nsQViewEventHandler
 {
@@ -51,7 +51,7 @@ void QViewEventHandler::connectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_VIEW ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_VIEW ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;
@@ -110,7 +110,7 @@ void QViewEventHandler::disconnectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_VIEW ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_VIEW ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;

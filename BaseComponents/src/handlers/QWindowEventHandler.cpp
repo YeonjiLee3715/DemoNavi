@@ -7,7 +7,7 @@
 #include <CLogger.h>
 #include <assert.h>
 
-#include "viewDefs.h"
+#include "baseComponentsDefs.h"
 
 namespace nsQWindowEventHandler {
     const char* TAG = "QWindowEventHandler";
@@ -52,7 +52,7 @@ void QWindowEventHandler::connectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_WINDOW ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_WINDOW ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;
@@ -111,7 +111,7 @@ void QWindowEventHandler::disconnectObjectEvent( QObject * pObj )
     }
 
     int nObjectType = vObjectType.toInt();
-    if( nObjectType != static_cast<int>( ViewEnum::OBJECT_WINDOW ) )
+    if( nObjectType != static_cast<int>( ControlEnum::OBJECT_WINDOW ) )
     {
         LOGE( TAG, "This object is not a button control. objectType: %d", nObjectType );
         return;
