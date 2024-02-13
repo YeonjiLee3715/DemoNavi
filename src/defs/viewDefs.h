@@ -9,6 +9,9 @@
 
 // Qml object names
 #define _idVwNaviHome                   "_idVwNaviHome"
+#define _idVwSearch                     "_idVwSearch"
+
+#define _idBtnSearch                    "_idBtnSearch"
 
 // End Qml object names
 
@@ -20,7 +23,8 @@ class CustomControlEnum: public ControlEnum
 public:
     typedef enum eViewId
     {
-        ID_VW_NAVI_HOME = 500
+        ID_VW_NAVI_HOME = 500,
+        ID_VW_SEARCH
     }eViewId;
 
     typedef enum eBtnControlId

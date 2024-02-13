@@ -9,7 +9,7 @@ class QTextEditEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit            QTextEditEventHandler( QObject *parent = nullptr );
+    explicit            QTextEditEventHandler( QObject* parent );
     virtual             ~QTextEditEventHandler();
 
 public:

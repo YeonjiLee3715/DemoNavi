@@ -11,7 +11,7 @@ import Views
 BaseWindow {
     property int fixedWidth: 800
     property int fixedHeight: 450
-    property int titlebarHeight: 30
+    property int titlebarHeight: 45
 
     id: _idWnRoot
     objectId: ControlEnum.ID_WN_ROOT
@@ -29,6 +29,10 @@ BaseWindow {
 
     signal viewLoaded( string objName )
     signal viewDestruction( string objName )
+
+    function showSearchView(){
+        _idLdrVw.changeView(_idCmpVwSearch)
+    }
 
     property string txtTitle
 
@@ -99,9 +103,27 @@ BaseWindow {
             }
 
             FlatButton {
+                id: _idBtnBack
                 anchors.verticalCenter: _idTitleBar.verticalCenter
-                x: fixedWidth-30
-                width: 30
+                x: 0
+                width: titlebarHeight
+                height: titlebarHeight
+                visible: _idLdrVw.sourceComponent === _idCmpVwSearch
+                icon.source: "qrc:/Main/res/img/back_arrow.png"
+
+                display: AbstractButton.IconOnly
+                bgHoverColor: "#ff5555"
+                bgPressedColor: "#ff2222"
+
+                onClicked: {
+                    _idLdrVw.changeView(_idCmpVwNaviHome)
+                }
+            }
+
+            FlatButton {
+                anchors.verticalCenter: _idTitleBar.verticalCenter
+                x: fixedWidth-titlebarHeight
+                width: titlebarHeight
                 height: _idTitleBar.hight
                 text: "X"
                 font.bold: true
@@ -119,6 +141,15 @@ BaseWindow {
     Component {
         id: _idCmpVwNaviHome
         NaviHomeView {
+            width: fixedWidth
+            height: fixedHeight-titlebarHeight
+        }
+    }
+
+    // SearchView
+    Component {
+        id: _idCmpVwSearch
+        SearchView {
             width: fixedWidth
             height: fixedHeight-titlebarHeight
         }

@@ -40,7 +40,7 @@ BaseView {
     }
 
     FlatButton {
-        id: _idBtnSearch
+        id: _idBtnSearchView
         anchors.top: _idBtnGoToCurPos.bottom
         anchors.topMargin: 10
         x: 10
@@ -57,7 +57,7 @@ BaseView {
         opacity: 0.5
 
         onClicked: {
-            //todo: move to search view
+            _idWnRoot.showSearchView()
         }
     }
 

@@ -51,6 +51,7 @@ set(SOURCE_FILES
 # modules/viewModule
     src/modules/viewModule/ViewControlModule.cpp
     src/modules/viewModule/views/NaviHomeView.cpp
+    src/modules/viewModule/views/SearchView.cpp
 )
 
 set(HEADERS_FILES
@@ -70,6 +71,7 @@ set(HEADERS_FILES
 # modules/viewModule
     src/modules/viewModule/ViewControlModule.h
     src/modules/viewModule/views/NaviHomeView.h
+    src/modules/viewModule/views/SearchView.h
 )
 
 qt_add_executable(DemoNaviApp
@@ -81,11 +83,12 @@ qt_add_executable(DemoNaviApp
 set(RES_QML_FILES
 #components
     "res/qml/Components/FlatButton.qml"
-    "res/qml/Components/IconTextEdit.qml"
+    "res/qml/Components/CustomTextEdit.qml"
     "res/qml/Components/ListView.qml"
     "res/qml/Components/TabButton.qml"
 #Views
     "res/qml/Views/NaviHomeView.qml"
+    "res/qml/Views/SearchView.qml"
 )
 
 qt_add_resources(DemoNaviApp "configuration"
@@ -125,6 +128,7 @@ qt6_add_qml_module(${CMAKE_PROJECT_NAME}
         "res/img/marker_blue.png"
         "res/img/aim.png"
         "res/img/search.png"
+        "res/img/back_arrow.png"
 )
 
 add_subdirectory(content)

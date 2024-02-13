@@ -3,4 +3,4 @@ module Components
 FlatButton 1.0 FlatButton.qml
 TabButton 1.0 TabButton.qml
 ListView 1.0 ListView.qml
-IconTextEdit 1.0 IconTextEdit.qml
+CustomTextEdit 1.0 CustomTextEdit.qml

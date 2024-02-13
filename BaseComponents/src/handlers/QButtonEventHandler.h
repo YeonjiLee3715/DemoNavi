@@ -9,7 +9,7 @@ class QButtonEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit QButtonEventHandler( QObject *parent = nullptr);
+    explicit QButtonEventHandler( QObject* parent );
     virtual ~QButtonEventHandler();
 
 public:

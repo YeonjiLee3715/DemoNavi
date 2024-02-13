@@ -9,7 +9,7 @@ class QViewEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit            QViewEventHandler( QObject *parent = nullptr);
+    explicit            QViewEventHandler( QObject* parent );
     virtual             ~QViewEventHandler();
 
 public:

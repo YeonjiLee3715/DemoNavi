@@ -15,6 +15,7 @@ Q_IMPORT_QML_PLUGIN(com_custom_basecomponentsPlugin)
 int main(int argc, char *argv[])
 {
     set_qt_environment();
+    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
 
     DemoNavi app(argc, argv);
 

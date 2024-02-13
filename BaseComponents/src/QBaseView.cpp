@@ -243,7 +243,7 @@ void QBaseView::Init()
 
     QHash<int, QBaseEventHandler*>::iterator it = m_mapCtrHandlers.find((int)ControlEnum::OBJECT_VIEW);
     if( it == m_mapCtrHandlers.end() ){
-        m_mapCtrHandlers.insert( (int)ControlEnum::OBJECT_VIEW, reinterpret_cast<QBaseEventHandler*>(new QViewEventHandler()));
+        m_mapCtrHandlers.insert( (int)ControlEnum::OBJECT_VIEW, reinterpret_cast<QBaseEventHandler*>(new QViewEventHandler(this)));
     }
 
     SetControlEventConnections();

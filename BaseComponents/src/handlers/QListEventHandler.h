@@ -9,7 +9,7 @@ class QListEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit            QListEventHandler( QObject *parent = nullptr );
+    explicit            QListEventHandler( QObject* parent );
     virtual             ~QListEventHandler();
 
 public:

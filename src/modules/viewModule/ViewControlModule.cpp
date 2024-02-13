@@ -4,6 +4,7 @@
 #include <viewDefs.h>
 
 #include <NaviHomeView.h>
+#include <SearchView.h>
 
 #include <CLogger.h>
 
@@ -218,6 +219,10 @@ void ViewControlModule::SetView(QObject* pObj)
 
         switch( it.key() ){
         case static_cast<int>(CustomControlEnum::ID_VW_NAVI_HOME): {
+            //connect signals
+        }
+        case static_cast<int>(CustomControlEnum::ID_VW_SEARCH): {
+            //connect signals
         }
         break;
         default:
@@ -230,6 +235,13 @@ void ViewControlModule::SetView(QObject* pObj)
             NaviHomeView* pView = new NaviHomeView(pObj);
             pView->Init();
             m_mapViews.insert(vObjectId.toInt(), reinterpret_cast<QBaseView*>(pView));
+            //connect signals
+        }
+        case static_cast<int>(CustomControlEnum::ID_VW_SEARCH): {
+            SearchView* pView = new SearchView(pObj);
+            pView->Init();
+            m_mapViews.insert(vObjectId.toInt(), reinterpret_cast<QBaseView*>(pView));
+            //connect signals
         }
             break;
         default:
@@ -250,9 +262,18 @@ void ViewControlModule::UnsetView(QObject* pObj, bool bDelete)
     if( it == m_mapViews.end() )
         return;
 
-    if( (*it) != nullptr ) {
-        if(it.key() == CustomControlEnum::ID_VW_NAVI_HOME)
-            disconnect( this, SIGNAL( SigSetTreeModel(QObject*) ), (*it), SLOT( SetTreeModel(QObject*) ) );
+    if( (*it) != nullptr ) {       
+        switch( it.key() ){
+        case static_cast<int>(CustomControlEnum::ID_VW_NAVI_HOME): {
+            //disconnect signals
+        }
+        case static_cast<int>(CustomControlEnum::ID_VW_SEARCH): {
+            //disconnect signals
+        }
+        break;
+        default:
+            break;
+        }
 
         (*it)->SetControlEventDisconnections();
     }
@@ -320,7 +341,7 @@ void ViewControlModule::init()
         return;
     }
 
-    m_pHWindowEvent = new QWindowEventHandler();
+    m_pHWindowEvent = new QWindowEventHandler(this);
 
     SetWindowEventConnections();
     HandleViewLoadedEvent(_idVwNaviHome);

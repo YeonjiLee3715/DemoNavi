@@ -9,7 +9,7 @@ class QComboBoxEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit            QComboBoxEventHandler( QObject *parent = nullptr);
+    explicit            QComboBoxEventHandler( QObject* parent );
     virtual             ~QComboBoxEventHandler();
 
 public:

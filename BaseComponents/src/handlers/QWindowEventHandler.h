@@ -9,7 +9,7 @@ class QWindowEventHandler: public QBaseEventHandler
     Q_OBJECT
 
 public:
-    explicit            QWindowEventHandler( QObject* parent = nullptr );
+    explicit            QWindowEventHandler( QObject* parent );
     virtual             ~QWindowEventHandler();
 
 public:

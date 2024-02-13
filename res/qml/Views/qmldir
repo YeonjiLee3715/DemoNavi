@@ -1,2 +1,3 @@
 module Views
 NaviHomeView 1.0 NaviHomeView.qml
+SearchView 1.0 SearchView.qml
