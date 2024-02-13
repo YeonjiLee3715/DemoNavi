@@ -27,7 +27,7 @@ ViewControlModule::~ViewControlModule()
 
     if( m_pHWindowEvent != nullptr ){
         m_pHWindowEvent->deleteLater();
-        m_pEngine = nullptr;
+        m_pHWindowEvent = nullptr;
     }
 
     QHash<int, QBaseView*>::iterator it = m_mapViews.begin();
