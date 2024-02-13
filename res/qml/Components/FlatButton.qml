@@ -60,6 +60,7 @@ BaseButton {
                 bgDisableColor
         }
         radius: control.radius
+        opacity: control.opacity
     }
     text: ""
 

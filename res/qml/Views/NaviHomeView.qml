@@ -18,6 +18,49 @@ BaseView {
 
     visible: true
 
+    FlatButton {
+        id: _idBtnGoToCurPos
+        x: 10
+        y: 10
+        z: 1
+        width: 50
+        height: 50
+        icon.source: "qrc:/Main/res/img/aim.png"
+        display: AbstractButton.IconOnly
+
+        bgNormalColor: "#8888ff"
+        bgHoverColor: "#5555ff"
+        bgFocusColor: "#8888ff"
+        bgPressedColor: "#2222ff"
+        opacity: 0.5
+
+        onClicked: {
+            mapview.map.center = _idMkCur.coordinate
+        }
+    }
+
+    FlatButton {
+        id: _idBtnSearch
+        anchors.top: _idBtnGoToCurPos.bottom
+        anchors.topMargin: 10
+        x: 10
+        z: 1
+        width: 50
+        height: 50
+        icon.source: "qrc:/Main/res/img/search.png"
+        display: AbstractButton.IconOnly
+
+        bgNormalColor: "#8888ff"
+        bgHoverColor: "#5555ff"
+        bgFocusColor: "#8888ff"
+        bgPressedColor: "#2222ff"
+        opacity: 0.5
+
+        onClicked: {
+            //todo: move to search view
+        }
+    }
+
     MapView{
         id: mapview
 
@@ -32,26 +75,26 @@ BaseView {
         map.onCopyrightLinkActivated: Qt.openUrlExternally(link)
         map.plugin:     Plugin {
             name: "osm"
-            PluginParameter { name: "osm.useragent"; value: "My great Qt OSM application" }
+            PluginParameter { name: "osm.useragent"; value: "Qt osm test" }
             PluginParameter { name: "osm.mapping.host"; value: "http://osm.tile.server.address/" }
             PluginParameter { name: "osm.mapping.copyright"; value: "All mine" }
             PluginParameter { name: "osm.routing.host"; value: "http://osrm.server.address/viaroute" }
             PluginParameter { name: "osm.geocoding.host"; value: "http://geocoding.server.address" }
         }
 
-        MapQuickItem {
-            id: _idMkCur
-            parent: mapview.map
-            sourceItem: Image {
-                                id: image
-                                source: "qrc:/Main/res/img/marker.png"
-            }
-            opacity: 1.0
-            anchorPoint: Qt.point(sourceItem.width/2, sourceItem.height/2)
-        }
-
         Component.onCompleted: {
             _idMkCur.coordinate = map.center
         }
+    }
+
+    MapQuickItem {
+        id: _idMkCur
+        parent: mapview.map
+        sourceItem: Image {
+                            id: image
+                            source: "qrc:/Main/res/img/marker.png"
+        }
+        opacity: 1.0
+        anchorPoint: Qt.point(sourceItem.width/2, sourceItem.height/2)
     }
 }

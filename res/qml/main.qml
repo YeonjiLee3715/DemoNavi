@@ -55,7 +55,6 @@ BaseWindow {
     }
 
 // components
-
     // title bar
     Component {
         id: _idCmpTitleBar
@@ -68,6 +67,7 @@ BaseWindow {
             color: 'lightsteelblue'
             layer.enabled: true
             anchors.top: _idWnRoot.top
+            opacity: 0.4
 
             Text {
                 anchors.fill: parent
