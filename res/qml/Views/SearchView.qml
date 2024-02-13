@@ -31,7 +31,7 @@ BaseView {
             Layout.fillHeight: true
             enterKeyAction: EnterKeyAction.Search
 
-            Keys.onReleased: {
+            Keys.onReleased: (event) => {
                     if (event.key === Qt.Key_Return) {
                         _idBtnSearch.focus = true
                         //todo: search action
