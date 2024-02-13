@@ -40,7 +40,7 @@ set(SOURCE_FILES
     src/handlers/QWindowEventHandler.cpp
 )
 
-set(HEADERS_FILES
+set(HEADER_FILES
     src/defs/cmnDefs.h
     src/logger/CLogger.h
     ${BASECOMPONENTS_INCLUDES}
@@ -48,7 +48,7 @@ set(HEADERS_FILES
 
 qt_add_library(BaseComponents STATIC
     ${SOURCE_FILES}
-    ${HEADERS_FILES}
+    ${HEADER_FILES}
 )
 
 qt6_add_qml_module(BaseComponents

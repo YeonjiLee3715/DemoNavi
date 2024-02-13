@@ -54,7 +54,7 @@ set(SOURCE_FILES
     src/modules/viewModule/views/SearchView.cpp
 )
 
-set(HEADERS_FILES
+set(HEADER_FILES
     src/DemoNavi.h
 # commonLibs
     src/commonLibs/commonLibsDef.h
@@ -76,7 +76,7 @@ set(HEADERS_FILES
 
 qt_add_executable(DemoNaviApp
     ${SOURCE_FILES}
-    ${HEADERS_FILES}
+    ${HEADER_FILES}
 )
 
 # Resources:
