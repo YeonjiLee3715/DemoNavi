@@ -67,20 +67,20 @@ BaseView {
         anchors.fill: parent
         map.zoomLevel: map.maximumZoomLevel
         map.center {
-            // The GangNam station
+            // GangNam station
             latitude: 37.497952
             longitude: 127.027619
         }
         focus: true
         map.onCopyrightLinkActivated: Qt.openUrlExternally(link)
-        map.plugin:     Plugin {
-            name: "osm"
-            PluginParameter { name: "osm.useragent"; value: "Qt osm test" }
-            PluginParameter { name: "osm.mapping.host"; value: "http://osm.tile.server.address/" }
-            PluginParameter { name: "osm.mapping.copyright"; value: "All mine" }
-            PluginParameter { name: "osm.routing.host"; value: "http://osrm.server.address/viaroute" }
-            PluginParameter { name: "osm.geocoding.host"; value: "http://geocoding.server.address" }
-        }
+        map.plugin: Plugin {
+                        name: "osm"
+                        PluginParameter { name: "osm.useragent"; value: "Qt osm test" }
+                        PluginParameter { name: "osm.mapping.host"; value: "http://osm.tile.server.address/" }
+                        PluginParameter { name: "osm.mapping.copyright"; value: "All mine" }
+                        PluginParameter { name: "osm.routing.host"; value: "http://osrm.server.address/viaroute" }
+                        PluginParameter { name: "osm.geocoding.host"; value: "https://nominatim.openstreetmap.org/search" }
+                    }
 
         Component.onCompleted: {
             _idMkCur.coordinate = map.center
@@ -91,9 +91,9 @@ BaseView {
         id: _idMkCur
         parent: mapview.map
         sourceItem: Image {
-                            id: image
-                            source: "qrc:/Main/res/img/marker.png"
-        }
+                        id: image
+                        source: "qrc:/Main/res/img/marker.png"
+                    }
         opacity: 1.0
         anchorPoint: Qt.point(sourceItem.width/2, sourceItem.height/2)
     }
