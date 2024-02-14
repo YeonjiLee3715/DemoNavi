@@ -45,6 +45,7 @@ set(SOURCE_FILES
     src/commonLibs/QModuleManager.cpp
     src/commonLibs/CLogger.cpp
     src/commonLibs/CStrManager.cpp
+    src/commonLibs/QNetworkManager.cpp
 # modules
     src/modules/ModuleEnum.cpp
     src/modules/QModuleFactory.cpp
@@ -62,6 +63,7 @@ set(HEADER_FILES
     src/commonLibs/QModuleManager.h
     src/commonLibs/CLogger.h
     src/commonLibs/CStrManager.h
+    src/commonLibs/QNetworkManager.h
 # defs
     src/defs/cmnDefs.h
     src/defs/viewDefs.h
